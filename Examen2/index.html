@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:: Examen #2 ::.</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand">Examen 2 EdD2</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Desarrolladores</a>
+                <div class="dropdown-menu" data-bs-popper="none">
+                  <a class="dropdown-item" href="https://github.com/Shokolat1/EdD2">Abdo Sabag</a>
+                  <a class="dropdown-item" href="https://github.com/Dagoberto26/examen-2-ED">Dagoberto Kalob</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<!-- BOTONES SELECCIÓN -->
+      <center>
+        <button type="button" class="btn btn-light" id="bPila">Pila</button>
+        <button type="button" class="btn btn-light" id="bCola">Cola</button>
+        <button type="button" class="btn btn-light" id="bES">Enlazada Simple</button>
+        <button type="button" class="btn btn-light" id="bED">Enlazada Doble</button>
+        <button type="button" class="btn btn-light" id="bCS">Circular Simple</button>
+        <button type="button" class="btn btn-light" id="bCD">Circular Doble</button>
+        <button type="button" class="btn btn-light" id="bSize">Tamaño de Todo</button>
+        <button type="button" class="btn btn-light" id="bEmpty">¿Está Vacío?</button>
+      </center>
+
+<!-- PILA -->
+      <div id="divPila" style="display: none; margin-top: 10px;">
+        <div id="metPila" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pilaPush" aria-expanded="false">
+                  Push
+                </button>
+              </h2>
+              <div id="pilaPush" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="pilap" class="form-control" aria-describedby="emailHelp" placeholder="Inserte valor a pila">
+                  <center>
+                    <button type="button" id="botonPP" class="btn btn-success btn-lg">Aceptar</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pilaPop" aria-expanded="false">
+                  Pop
+                </button>
+              </h2>
+              <div id="pilaPop" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="Ppop" class="btn btn-danger btn-lg">Eliminar último valor</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pilaPeek" aria-expanded="false">
+                  Peek
+                </button>
+              </h2>
+              <div id="pilaPeek" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="PPeek" class="btn btn-info btn-lg">Ver último valor</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="pila" class='muestra'>
+          <h2 class="title">PILA</h2>
+          <div class="mPila"></div>
+        </div>
+      </div>
+
+<!-- COLA -->
+      <div id="divCola" style="display:none; margin-top: 10px;">
+        <div id="metCola" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colaEnqueue" aria-expanded="false">
+                  Enqueue
+                </button>
+              </h2>
+              <div id="colaEnqueue" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="Cenqueue" class="form-control" aria-describedby="emailHelp" placeholder="Insertar valor a Cola">
+                  <center>
+                    <button type="button" id="BCenqueue" class="btn btn-success btn-lg">Aceptar</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colaDequeue" aria-expanded="false">
+                  Dequeue
+                </button>
+              </h2>
+              <div id="colaDequeue" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="Cdequeue" class="btn btn-danger btn-lg">Eliminar primer valor</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colaPeek" aria-expanded="false">
+                  Peek
+                </button>
+              </h2>
+              <div id="colaPeek" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="Cpeek" class="btn btn-info btn-lg">Mostrar primer elemento</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cola" class='muestra'>
+          <h2 class="title">COLA</h2>
+          <div class="mCola"></div>
+        </div>
+      </div>
+
+<!-- ENLAZADA SIMPLE -->
+      <div id="divEnSim" style="display:none; margin-top: 10px;">
+        <div id="metEnSim" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESFirst" aria-expanded="false">
+                  First
+                </button>
+              </h2>
+              <div id="LESFirst" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="FES" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="IFES" class="btn btn-success btn-lg">Insertar al principio</button>
+                    <button type="button" id="BFES" class="btn btn-danger btn-lg">Borrar del principio</button>
+                  </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESLast" aria-expanded="false">
+                  Last
+                </button>
+              </h2>
+              <div id="LESLast" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="vLES" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="ILES" class="btn btn-success btn-lg">Insertar al final</button> 
+                    <button type="button" id="BLES" class="btn btn-danger btn-lg">Borrar del final</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESAtFrom" aria-expanded="false">
+                  At o From
+                </button>
+              </h2>
+              <div id="LESAtFrom" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="AESV" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <br>
+                  <input type="number" id="AESI" class="form-control" aria-describedby="emailHelp" placeholder="Índice">
+                  <center>
+                    <button type="button" id="IAES" class="btn btn-success btn-lg">Insertar valor en índice</button> 
+                    <button type="button" id="BAES" class="btn btn-danger btn-lg">Borrar valor del índice</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESremoveData" aria-expanded="false">
+                  removeData
+                </button>
+              </h2>
+              <div id="LESremoveData" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="VRDES" class="form-control"  aria-describedby="emailHelp" placeholder="Valor a buscar">
+                  <center>
+                    <button type="button" id="RDES" class="btn btn-danger btn-lg">Eliminar de la lista</button>
+                  </center>              
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESremoveList" aria-expanded="false">
+                  removeList
+                </button>
+              </h2>
+              <div id="LESremoveList" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RLES" class="btn btn-danger btn-lg">Eliminar lista completa</button> 
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="enSim" class='muestra'>
+          <h2 class="title">LISTA ENLAZADA SIMPLE</h2>
+          <div class="mEnSim"></div>
+        </div>
+      </div>
+
+<!-- ENLAZADA DOBLE -->
+      <div id="divEnDob" style="display:none; margin-top: 10px;">
+        <div id="metEnDob" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LEDFirst" aria-expanded="false">
+                  First
+                </button>
+              </h2>
+              <div id="LEDFirst" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="FED" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="IFED" class="btn btn-success btn-lg">Insertar al principio</button> 
+                    <button type="button" id="BFED" class="btn btn-danger btn-lg">Borrar del principio</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LEDLast" aria-expanded="false">
+                  Last
+                </button>
+              </h2>
+              <div id="LEDLast" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="vLED" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="ILED" class="btn btn-success btn-lg">Insertar al final</button> 
+                    <button type="button" id="BLED" class="btn btn-danger btn-lg">Borrar del final</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LEDAtFrom" aria-expanded="false">
+                  At o From
+                </button>
+              </h2>
+              <div id="LEDAtFrom" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="AEDV" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <br>
+                  <input type="number" id="AEDI" class="form-control" aria-describedby="emailHelp" placeholder="Índice">
+                  <center>
+                    <button type="button" id="IAED" class="btn btn-success btn-lg">Insertar valor en índice</button> 
+                    <button type="button" id="BAED" class="btn btn-danger btn-lg">Borrar valor del índice</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LEDremoveData" aria-expanded="false">
+                  removeData
+                </button>
+              </h2>
+              <div id="LEDremoveData" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="VRDED" class="form-control" aria-describedby="emailHelp" placeholder="Valor a buscar">
+                  <center>
+                    <button type="button" id="RDED" class="btn btn-danger btn-lg">Eliminar de la lista</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LEDremoveList" aria-expanded="false">
+                  removeList
+                </button>
+              </h2>
+              <div id="LEDremoveList" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RLED" class="btn btn-danger btn-lg">Eliminar Lista entera</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LESreversePrint" aria-expanded="false">
+                  reversePrint
+                </button>
+              </h2>
+              <div id="LESreversePrint" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RPED" class="btn btn-info btn-lg">Mostrar lista al revés</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="enDob" class='muestra'>
+          <h2 class="title">LISTA DOBLEMENTE ENLAZADA</h2>
+          <div class="mEnDob"></div>
+        </div>
+      </div>
+
+<!-- CIRCULAR SIMPLE -->
+      <div id="divCirS" style="display:none; margin-top: 10px;">
+        <div id="metCirSim" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCSFirst" aria-expanded="false">
+                  First
+                </button>
+              </h2>
+              <div id="LCSFirst" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="FCS" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="IFCS" class="btn btn-success btn-lg">Insertar al principio</button> 
+                    <button type="button" id="BFCS" class="btn btn-danger btn-lg">Borrar del principio</button>
+                  </center>                  
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCSLast" aria-expanded="false">
+                  Last
+                </button>
+              </h2>
+              <div id="LCSLast" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="LCS" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="ILCS" class="btn btn-success btn-lg">Insertar al final</button> 
+                    <button type="button" id="BLCS" class="btn btn-danger btn-lg">Borrar del final</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCSAtFrom" aria-expanded="false">
+                  At o From
+                </button>
+              </h2>
+              <div id="LCSAtFrom" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="ACSV" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <br>
+                  <input type="number" id="ACSI" class="form-control"  aria-describedby="emailHelp" placeholder="Índice">
+                  <center>
+                    <button type="button" id="IACS" class="btn btn-success btn-lg">Insertar valor en índice</button>
+                    <button type="button" id="BACS" class="btn btn-danger btn-lg">Borrar valor del índice</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCSremoveData" aria-expanded="false">
+                  removeData
+                </button>
+              </h2>
+              <div id="LCSremoveData" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="VRDCS" class="form-control"  aria-describedby="emailHelp" placeholder="Valor a buscar">
+                  <center>
+                    <button type="button" id="RDCS" class="btn btn-danger btn-lg">Eliminar de la lista</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDremoveList" aria-expanded="false">
+                  removeList
+                </button>
+              </h2>
+              <div id="LCDremoveList" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RLCS" class="btn btn-danger btn-lg">Eliminar lista entera</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDgetFirst" aria-expanded="false">
+                  getFirst
+                </button>
+              </h2>
+              <div id="LCDgetFirst" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="GFCS" class="btn btn-info btn-lg">Obtener primer elemento</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDgetLast" aria-expanded="false">
+                  getLast
+                </button>
+              </h2>
+              <div id="LCDgetLast" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="GLCS" class="btn btn-info btn-lg">Obtener último elemento</button> 
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cirSim" class='muestra'>
+          <h2 class="title">LISTA CIRCULAR SIMPLE</h2>
+          <div class="mCirSim"></div>
+        </div>
+      </div>
+
+<!-- CIRCULAR DOBLE -->
+      <div id="divCirD" style="display:none; margin-top: 10px; ">
+        <div id="metCirDob" class='metodo'>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDFirst" aria-expanded="false">
+                  First
+                </button>
+              </h2>
+              <div id="LCDFirst" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="FCD" class="form-control" aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="IFCD" class="btn btn-success btn-lg">Insertar al principio</button> 
+                    <button type="button" id="BFCD" class="btn btn-danger btn-lg">Borrar del principio</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDLast" aria-expanded="false">
+                  Last
+                </button>
+              </h2>
+              <div id="LCDLast" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="vLCD" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <center>
+                    <button type="button" id="ILCD" class="btn btn-success btn-lg">Insertar al final</button> 
+                    <button type="button" id="BLCD" class="btn btn-danger btn-lg">Borrar del final</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDAtFrom" aria-expanded="false">
+                  At o From
+                </button>
+              </h2>
+              <div id="LCDAtFrom" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="ACDV" class="form-control"  aria-describedby="emailHelp" placeholder="Valor">
+                  <br>
+                  <input type="number" id="ACDI" class="form-control"  aria-describedby="emailHelp" placeholder="Índice">
+                  <center>
+                    <button type="button" id="IACD" class="btn btn-success btn-lg">Insertar valor en índice</button> 
+                    <button type="button" id="BACD" class="btn btn-danger btn-lg">Borrar valor del índice</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDremoveData" aria-expanded="false">
+                  removeData
+                </button>
+              </h2>
+              <div id="LCDremoveData" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <input type="number" id="VRDCD" class="form-control"  aria-describedby="emailHelp" placeholder="Valor a buscar">
+                  <center>
+                    <button type="button" id="RDCD" class="btn btn-danger btn-lg">Eliminar de la lista</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDremoveList" aria-expanded="false">
+                  removeList
+                </button>
+              </h2>
+              <div id="LCDremoveList" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RLCD" class="btn btn-danger btn-lg">Eliminar lista completa</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LCDreversePrint" aria-expanded="false">
+                  reversePrint
+                </button>
+              </h2>
+              <div id="LCDreversePrint" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <!-- FORMULARIO -->
+                  <center>
+                    <button type="button" id="RPCD" class="btn btn-info btn-lg" >Mostrar lista al revés</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cirDob" class='muestra'>
+          <h2 class="title">LISTA CIRCULAR DOBLE</h2>
+          <div class="mCirDob"></div>
+        </div>
+      </div>
+</body>
+<script src="./js/index.js" type="module"></script>
+<script src="./js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,89 @@
+body{
+  background:url('../img/wppr.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+nav{
+  margin-bottom: 15px;
+}
+
+.btn{
+  margin: 10px 5px;
+}
+
+span{
+  margin: 5px;
+}
+
+.title{
+  text-align: center;
+  margin: 10px;
+  color: #f1f1f1;
+}
+
+.muestra{
+  border-radius: 10px;
+  background-color: rgba(137, 43, 226, 0.815);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(93, 54, 200);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(69, 23, 197);
+}
+
+@media (min-width: 768px) {
+  #divPila, #divCola, #divEnSim, #divEnDob, #divCirS, #divCirD{
+    grid-template-columns: 45vw 45vw;
+    grid-template-areas:  "a b";
+    column-gap: 2vw;
+    margin: 15px 3.4vw;
+  }
+
+  .metodo{
+    grid-area: a; 
+  }
+  
+  .muestra{
+    grid-area: b;
+    width: 45vw;
+    height: 60vh;
+  }
+}
+
+@media(max-width:768px) {
+  #divPila, #divCola, #divEnSim, #divEnDob, #divCirS, #divCirD{
+    grid-template-columns: none;
+    grid-template-rows: 25vh 30vh;
+    grid-template-areas:  "b"
+                          "a";
+    row-gap: 2vw;
+  }
+  
+
+  .metodo{
+    grid-area: a;
+    width: 75vw;
+    margin: 0px 12vw;
+  }
+  
+  .muestra{
+    grid-area: b;
+    margin: auto;
+    width: 90vw;
+    height: 25vh;
+  }
+}
