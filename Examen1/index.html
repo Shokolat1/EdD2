@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:: AutoMachine ::.</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">AUTOMACHINE</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto devsinfo">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Shokolat1/EdD2">Abdo Sabag</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/irvingmaster1/estructura-de-datos-2">Irving Núñez</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bodyGrid">
+    <div class="botones">
+      <button class="btn btn-light b" id="btnNewPt" >Nueva Parte</button>
+      <button class="btn btn-warning b" id="btnEditar">Editar Parte</button>
+      <button class="btn btn-info b" id="btnBuscar" style="display: inline-block;">Buscar Parte</button>
+      <button class="btn btn-info b" id="btnMuestra" style="display: none;">Mostrar Todo</button>
+      <button class="btn btn-danger b" id="btnBorrar">Borrar Parte</button>
+    </div>
+
+    <table class="table table-hover" id="bodytable">
+      <legend style="display: none;" class="legendTable t" id="encontrada">Información Encontrada</legend>
+      <legend style="display: none;" class="legendBusqueda t" id="encontrada">Información a Editar</legend>
+      <legend style="display: none;" class="legendDefault t" id="encontrada">Inventario Actual</legend>
+      <thead id="cabezaTabla">
+        <tr>
+          <th scope="col">Modelo</th>
+          <th scope="col">Parte</th>
+          <th scope="col">Material</th>
+          <th scope="col">Color</th>
+        </tr>
+      </thead>
+      <tbody id="tablaDatos"></tbody>
+    </table>
+
+    <div class="nuevaParte" style="display: none;">
+      <form>
+        <fieldset>
+          <legend>Nueva Parte</legend>
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control modeloA" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Modelo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control parteA" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Parte</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control materialA" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Material</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control colorA" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Color</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-lg btn-outline-light" id="btnFormAdd" type="button">Agregar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="editarPt1" style="display: none;">
+      <form>
+        <fieldset>
+          <legend>Buscar Parte a Editar</legend>
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control modeloE1" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Modelo</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-lg btn-outline-info" id="btnFormEdit1" type="button">Buscar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="editarPt2" style="display: none;">
+      <form>
+        <fieldset>
+          <legend>Editar Parte</legend>
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control modeloE2" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Modelo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control parteE" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Parte</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control materialE" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Material</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control colorE" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Color</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-lg btn-outline-warning" id="btnFormEdit2" type="button">Editar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="borrarParte" style="display: none;">
+      <form>
+        <fieldset>
+          <legend>Borrar Parte</legend>
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control modeloBo" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Modelo</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-lg btn-outline-danger" id="btnFormEliminar" type="button">Borrar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="buscarParte" style="display: none;">
+      <form>
+        <fieldset>
+          <legend>Buscar Parte</legend>
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control modeloBu" id="floatingInput" placeholder="x">
+              <label for="floatingInput">Modelo</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-lg btn-outline-info" id="btnFormBuscar" type="button">Buscar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <footer id="piepag">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto devsinfo">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Más de los desarrolladores</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://github.com/Shokolat1/EdD2">Abdo Sabag</a>
+            <a class="dropdown-item" href="https://github.com/irvingmaster1/estructura-de-datos-2">Irving Núñez</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+            </div>
+  </footer>
+  
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

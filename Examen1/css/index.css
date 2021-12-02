@@ -1,0 +1,46 @@
+.devsinfo{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.bodyGrid{
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 47vw 47vw;
+    grid-template-rows: 8vh 74vh;
+    grid-template-areas:"a d "
+                        "b c ";
+    column-gap: 35px;
+}
+
+.botones{
+    grid-area: a;
+    align-items: center;
+}
+
+.nuevaParte, .editarPt1, .editarPt2, .buscarParte, .borrarParte{
+    grid-area: b;
+}
+#cabezaTabla{
+    grid-area: c;
+}
+#encontrada{
+    grid-area: d;
+}
+
+#bodytable{
+    grid-area: c;
+
+    align-items: center;
+    margin-bottom: 90vh;
+}
+#addpart{
+    grid-area: d;
+}
+.b{
+    margin-left: 3vw;
+  
+}
+.t{
+    text-align: center;
+}
